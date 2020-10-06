@@ -1,57 +1,70 @@
-# Project Name
+---
+page_type: sample
+languages:
+- Java
+products:
+- azure
+description: "This repository contains an end-2-end sample for a spring-boot application on how to use the new Java Azure SDK to pull secrets from keyvault and read/write/query from CosmosDb using spring data"
+urlFragment: spring-data-cosmosdb-e2d-sample
+---
 
-(short, 1-3 sentenced, description of the project)
+# spring-data-cosmosdb-e2d-sample
+
+This is an end-2-end sample for a spring-boot application on how to use the new Java Azure SDK to pull secrets from keyvault and read/write/query from CosmosDb using [Spring Data](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
 
 ## Features
 
-This project framework provides the following features:
+- Pulling secrets from azure Key Vault via MI 
+- Read, write and perform queries using spring data CosmosDB libreary 
+- Set Cosmosdb configuration in a separate package to demonistrate a real scenario with microservices 
 
-* Feature 1
-* Feature 2
-* ...
 
 ## Getting Started
 
 ### Prerequisites
 
-(ideally very short, if any)
+- Java 1.8 or 11
+- Azure subscription with the following ressources:
+  - Resource Groups
+  - Keyvault (You will need to set a policy for get&list permission)
+  - Cosmos DB
+- Bash shell (tested on Mac, Ubuntu, Windows with WSL2)
+- Visual Studio Code (optional) ([download](https://code.visualstudio.com/download)) or IntelliJ
 
-- OS
-- Library version
-- ...
 
 ### Installation
 
-(ideally very short)
+Create the following secrets in your Keyvault
 
-- npm install [package name]
-- mvn install
-- ...
+```bash
+az keyvault secret set --vault-name "<YOUR-KV-NAME>" --name "cosmosdburisecretname" --value "<Cosmosdb-URI>"
+
+az keyvault secret set --vault-name "<YOUR-KV-NAME>" --name "cosmosdbkeysecretname" --value "<Cosmosdb-Key>"
+
+az keyvault secret set --vault-name "<YOUR-KV-NAME>" --name "cosmosdbsecondarykeysecretname" --value "<Comsmosdb-secondary-key>"
+
+```
 
 ### Quickstart
-(Add steps to get up and running quickly)
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+- Clone the repo to your local machine
 
+```bash
+git clone https://github.com/Azure-Samples/spring-data-cosmosdb-e2d-sample.git
+```
 
-## Demo
+- Set the environment variables for keyvault name
 
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
+```bash
+KEYVAULT_NAME=<YOUR-KV-NAME>
+```
 
 ## Resources
 
-(Any additional resources or related projects)
+- [Azure Spring Data Cosmos client library for Java](hhttps://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
+- [Azure Cosmos DB SQL API: Java SDK v4 examples](https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-java-sdk-samples#query-examples)
+- [Async Programming with Project Reactor and the new Azure SDK for Java](https://devblogs.microsoft.com/azure-sdk/async-programming-with-project-reactor/)
+- [Quickstart: Build a Java app to manage Azure Cosmos DB SQL API data](https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-java?tabs=sync)
+### Credit
 
-- Link to supporting information
-- Link to similar sample
-- ...
+Thanks for [Helium](https://github.com/retaildevcrews/helium-java) project for providing the best practice for pulling secrets from KV
