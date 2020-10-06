@@ -5,10 +5,10 @@ languages:
 products:
 - azure
 description: "This repository contains an end-2-end sample for a spring-boot application on how to use the new Java Azure SDK to pull secrets from keyvault and read/write/query from CosmosDb using spring data"
-urlFragment: spring-data-cosmosdb-e2d-sample
+urlFragment: spring-data-cosmosdb-e22-sample
 ---
 
-# spring-data-cosmosdb-e2d-sample
+# spring-data-cosmosdb-e2e-sample
 
 This is an end-2-end sample for a spring-boot application on how to use the new Java Azure SDK to pull secrets from keyvault and read/write/query from CosmosDb using [Spring Data](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
 
@@ -50,7 +50,7 @@ az keyvault secret set --vault-name "<YOUR-KV-NAME>" --name "cosmosdbsecondaryke
 - Clone the repo to your local machine
 
 ```bash
-git clone https://github.com/Azure-Samples/spring-data-cosmosdb-e2d-sample.git
+git clone https://github.com/Azure-Samples/spring-data-cosmosdb-e2e-sample.git
 ```
 
 - Set the environment variables for keyvault name
