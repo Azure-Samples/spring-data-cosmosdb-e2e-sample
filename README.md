@@ -12,13 +12,13 @@ urlFragment: spring-data-cosmosdb-e2e-sample
 
 # spring-data-cosmosdb-e2e-sample
 
-This is an end-2-end sample for a spring-boot application on how to use the new Java Azure SDK to pull secrets from keyvault and read/write/query from CosmosDb using [Spring Data](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
+This is an end-2-end sample for a spring-boot application on how to use the new [Azure SDK for Java](https://github.com/azure/azure-sdk-for-java) to pull secrets from Key Vault and read/write/query from Cosmos DB using [Spring Data](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
 
 ## Features
 
 - Pulling secrets from azure Key Vault via MI 
 - Read, write and perform queries using spring data CosmosDB libreary 
-- Set Cosmosdb configuration in a separate package to demonistrate a real scenario with microservices 
+- Set Cosmos DB configuration in a separate package to demonistrate a real scenario with microservices 
 
 
 ## Getting Started
@@ -28,7 +28,7 @@ This is an end-2-end sample for a spring-boot application on how to use the new 
 - Java 1.8 or 11
 - Azure subscription with the following ressources:
   - Resource Groups
-  - Keyvault (You will need to set a policy for get&list permission)
+  - Key Vault (You will need to set a policy for get & list permission)
   - Cosmos DB
 - Bash shell (tested on Mac, Ubuntu, Windows with WSL2)
 - Visual Studio Code (optional) ([download](https://code.visualstudio.com/download)) or IntelliJ
@@ -36,7 +36,7 @@ This is an end-2-end sample for a spring-boot application on how to use the new 
 
 ### Installation
 
-Create the following secrets in your Keyvault
+Create the following secrets in your Key Vault
 
 ```bash
 az keyvault secret set --vault-name "<YOUR-KV-NAME>" --name "cosmosdburisecretname" --value "<Cosmosdb-URI>"
@@ -55,7 +55,7 @@ az keyvault secret set --vault-name "<YOUR-KV-NAME>" --name "cosmosdbsecondaryke
 git clone https://github.com/Azure-Samples/spring-data-cosmosdb-e2e-sample.git
 ```
 
-- Set the environment variables for keyvault name
+- Set the environment variables for Key Vault name
 
 ```bash
 KEYVAULT_NAME=<YOUR-KV-NAME>
@@ -69,4 +69,4 @@ KEYVAULT_NAME=<YOUR-KV-NAME>
 - [Quickstart: Build a Java app to manage Azure Cosmos DB SQL API data](https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-java?tabs=sync)
 ### Credit
 
-Thanks for [Helium](https://github.com/retaildevcrews/helium-java) project for providing the best practice for pulling secrets from KV
+Thanks for [Helium](https://github.com/retaildevcrews/helium-java) project for providing the best practice for pulling secrets from Key Vault
