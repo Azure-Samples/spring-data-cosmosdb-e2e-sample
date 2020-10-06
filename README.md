@@ -5,7 +5,7 @@ languages:
 products:
 - azure
 description: "This repository contains an end-2-end sample for a spring-boot application on how to use the new Java Azure SDK to pull secrets from keyvault and read/write/query from CosmosDb using spring data"
-urlFragment: spring-data-cosmosdb-e22-sample
+urlFragment: spring-data-cosmosdb-e2e-sample
 ---
 
 # spring-data-cosmosdb-e2e-sample
