@@ -61,6 +61,14 @@ git clone https://github.com/Azure-Samples/spring-data-cosmosdb-e2e-sample.git
 KEYVAULT_NAME=<YOUR-KV-NAME>
 ```
 
+Run the spring-boot sample app
+
+```bash
+cd spring-data-cosmosdb-e2e-sample
+mvn clean install 
+mvn spring-boot:run 
+```
+
 ## Resources
 
 - [Azure Spring Data Cosmos client library for Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
