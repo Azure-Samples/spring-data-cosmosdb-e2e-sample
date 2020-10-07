@@ -63,7 +63,7 @@ KEYVAULT_NAME=<YOUR-KV-NAME>
 
 ## Resources
 
-- [Azure Spring Data Cosmos client library for Java](hhttps://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
+- [Azure Spring Data Cosmos client library for Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
 - [Azure Cosmos DB SQL API: Java SDK v4 examples](https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-java-sdk-samples#query-examples)
 - [Async Programming with Project Reactor and the new Azure SDK for Java](https://devblogs.microsoft.com/azure-sdk/async-programming-with-project-reactor/)
 - [Quickstart: Build a Java app to manage Azure Cosmos DB SQL API data](https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-java?tabs=sync)
