@@ -1,0 +1,14 @@
+# Default values for java-azure-sample.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+labels:
+  aadpodidbinding: sample-mi  #should be value of $MI_Name from the output of aad-podid.sh
+
+image:
+  repository: helayoty #The specific acr created for this environment
+  name: sample # The name of the image for the java-azure-sample-java repo
+  tag: v1
+
+tenantID: 72f988bf-86f1-41af-91ab-2d7cd011db47
+
+keyVaultName: samplekv # Replace with the name of the Key Vault that holds the secrets
