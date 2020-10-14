@@ -13,11 +13,8 @@ import com.azure.spring.data.cosmos.config.AbstractCosmosConfiguration;
 import com.azure.spring.data.cosmos.config.CosmosConfig;
 import com.azure.spring.data.cosmos.core.ResponseDiagnostics;
 import com.azure.spring.data.cosmos.core.ResponseDiagnosticsProcessor;
-import com.azure.spring.data.cosmos.repository.config.EnableCosmosRepositories;
 import com.azure.spring.data.cosmos.repository.config.EnableReactiveCosmosRepositories;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
@@ -35,8 +32,6 @@ import java.text.MessageFormat;
 @PropertySource("classpath:application.properties")
 @Slf4j
 public class CosmosDbAutoConfiguration extends AbstractCosmosConfiguration {
-
-    private static final Logger logger = LogManager.getLogger(CosmosDbAutoConfiguration.class);
 
     protected final RequestOptions requestOptions = new RequestOptions();
     protected IConfigurationService configurationService;
@@ -80,7 +75,7 @@ public class CosmosDbAutoConfiguration extends AbstractCosmosConfiguration {
                     .directMode(directConnectionConfig, gatewayConnectionConfig);
 
         } catch (Exception ex) {
-            logger.error(MessageFormat.format("getConfig failed with error: {0}",
+            log.error(MessageFormat.format("getConfig failed with error: {0}",
                     ex.getMessage()));
 
             throw ex;

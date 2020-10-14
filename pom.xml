@@ -19,7 +19,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.3.RELEASE</version>
-        <relativePath>pom.xml</relativePath>
     </parent>
 
     <properties>
@@ -28,30 +27,21 @@
         <java.version>11</java.version>
 
         <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
-
-        <!-- dependencies version -->
-        <spring-boot-starter-webflux.version>2.3.3.RELEASE</spring-boot-starter-webflux.version>
-
-        <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
     </properties>
 
     <dependencies>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-            <version>${spring-boot-starter-webflux.version}</version>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-spring-webflux</artifactId>
-            <version>3.0.0</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -64,8 +54,33 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>${maven-deploy-plugin.version}</version>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.11.2</version>
+                <configuration>
+                    <tag>${project.artifactId}-${project.version}</tag>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <excludes>
+                        <exclude>org.springframework.*</exclude>
+                    </excludes>
+                    <allowMajorUpdates>false</allowMajorUpdates>
+                    <generateBackupPoms>false</generateBackupPoms>
+                    <rulesUri>file:///${user.dir}/maven-rules.xml</rulesUri>
+                </configuration>
             </plugin>
         </plugins>
     </build>
